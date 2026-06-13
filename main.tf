@@ -3,12 +3,26 @@ resource "aws_s3_bucket" "test_bucket" {
 
 }
 
-resource "aws_s3_object" "s3_object" {
+resource "aws_s3_object" "index" {
   bucket = aws_s3_bucket.test_bucket.bucket
   key = "./index.html"
   source = "./index.html"
   content_type = "text/html"
 
+}
+
+resource "aws_s3_object" "styles" {
+  bucket = aws_s3_bucket.test_bucket.bucket
+  key = "./styles.css"
+  source = "./styles.css"
+  content_type = "text/css"
+}
+
+resource "aws_s3_object" "scripts" {
+  bucket = aws_s3_bucket.test_bucket.bucket
+  key = "./script.js"
+  source = "./script.js"
+  content_type = "application/javascript"
 }
 resource "aws_s3_bucket_public_access_block" "example" {
   bucket = aws_s3_bucket.test_bucket.id
