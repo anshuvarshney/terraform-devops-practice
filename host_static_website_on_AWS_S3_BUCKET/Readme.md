@@ -97,4 +97,5 @@ terraform destroy
 
 ## Author
 
-Managed using Terraform and AWS S3.
+Anshu Varshney
+
